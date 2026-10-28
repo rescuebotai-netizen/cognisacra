@@ -1,0 +1,130 @@
+/* Codex Design System Stylesheet */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes staggerIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-stagger-in {
+  animation: staggerIn 400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes codexPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.96); }
+}
+
+.animate-codex-pulse {
+  animation: codexPulse 2s ease-in-out infinite;
+}
+
+/* Subtle Codex Dot Grid Backdrop */
+.codex-dot-grid {
+  background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.codex-line-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Terminal Glow & Accents */
+.codex-glow-sm {
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.18);
+}
+
+.codex-glow-md {
+  box-shadow: 0 0 24px rgba(16, 185, 129, 0.25);
+}
+
+.codex-glow-border {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+}
+
+/* 3D Scene Transitions */
+.perspective-container {
+  perspective: 1500px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Typography & Smooth Rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+/* Sleek Codex Terminal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08090A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2633;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
+
+/* Selection Color - Codex Mint/Emerald */
+::selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: #00F29A;
+}
+
+/* Minimalist & Borderless Platform Architecture */
+/* Removes all borderlines throughout the platform for a clean, cohesive surface aesthetic */
+.border,
+.border-t,
+.border-b,
+.border-l,
+.border-r,
+.border-x,
+.border-y,
+.border-2,
+.border-4,
+.border-zinc-800,
+.border-zinc-700,
+.border-zinc-900,
+.border-gray-800,
+.border-gray-700,
+.border-gray-900,
+.divide-y > * + *,
+.divide-x > * + * {
+  border-color: transparent !important;
+}
+
+/* Subtle, seamless elevated shadow for minimalistic cards */
+.minimal-card {
+  border: none !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}

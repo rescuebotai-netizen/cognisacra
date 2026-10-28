@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/cogni-sacra.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CogniSacra - AI-Powered Education Platform</title>
+    <meta name="description" content="Next-generation AI education platform with CogniSacra IDE environment, real-time STEM simulation labs, and personalized AI tutor companions." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              crimson: {
+                DEFAULT: '#10B981',
+                dark: '#059669',
+                light: '#34D399',
+                50: '#ECFDF5',
+                100: '#D1FAE5',
+                200: '#A7F3D0',
+                500: '#10B981',
+                600: '#059669',
+                700: '#047857',
+              },
+              codex: {
+                DEFAULT: '#10B981',
+                bg: '#08090A',
+                surface: '#0D1117',
+                panel: '#111520',
+                card: '#0F131C',
+                border: '#1E2533',
+                borderHover: '#2A3446',
+                accent: '#00F29A',
+                emerald: '#10B981',
+                mint: '#00F29A',
+                text: '#F3F4F6',
+                muted: '#8B949E',
+                terminal: '#05070A',
+              },
+              gray: {
+                50: '#0D1117',
+                100: '#121620',
+                200: '#1A212E',
+                300: '#252F40',
+                400: '#8B949E',
+                500: '#9CA3AF',
+                600: '#D1D5DB',
+                700: '#30394A',
+                800: '#161C27',
+                900: '#0B0E14',
+              },
+              success: '#10B981',
+              warning: '#F59E0B',
+              error: '#EF4444'
+            },
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'Fira Code', 'SFMono-Regular', 'monospace'],
+              display: ['Space Grotesk', 'sans-serif'],
+              serif: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            boxShadow: {
+              'glass': '0 4px 20px -2px rgba(0, 0, 0, 0.4)',
+              'glass-dark': '0 4px 25px -2px rgba(0, 0, 0, 0.6)',
+              'glow': '0 0 16px rgba(16, 185, 129, 0.25)',
+              'glow-lg': '0 0 32px rgba(16, 185, 129, 0.35)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --bg-color: #08090A;
+        --text-color: #F3F4F6;
+        --transition-speed: 200ms;
+        --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .dark {
+        --bg-color: #08090A;
+        --text-color: #F3F4F6;
+      }
+      
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #08090A !important;
+        background-image: none !important;
+        color: #F3F4F6;
+        transition: background-color var(--transition-speed) var(--transition-timing);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .perspective-container {
+        perspective: 1500px;
+      }
+
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+
+      .backface-hidden {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+      
+      /* Codex Panels */
+      .glass-panel {
+        background: #0D1117 !important;
+        border: 1px solid #1E2533 !important;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+      
+      .dark .glass-panel {
+        background: #0D1117 !important;
+        border: 1px solid #1E2533 !important;
+        box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6) !important;
+      }
+
+      /* Codex Developer Cards */
+      .card-minimal {
+        background-color: #0F131C;
+        border: 1px solid #1F2635;
+        border-radius: 8px;
+        transition: all var(--transition-speed) var(--transition-timing);
+      }
+
+      .dark .card-minimal {
+        background-color: #0F131C;
+        border: 1px solid #1F2635;
+      }
+
+      .card-minimal:hover {
+        border-color: #10B981;
+        box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.19.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#08090A] text-[#F3F4F6] selection:bg-emerald-500/30 selection:text-emerald-300 font-sans antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
